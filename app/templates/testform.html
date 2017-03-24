@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block content %}
+	<h1>Form</h1>
+	<form action="" method="post" name="testform">
+		{{ form.hidden_tag() }}
+		<p>
+			Insert Form here<br>
+		</p>
+		<p> Line 2 </p>
+		<p><input type="submit" name="Placeholder"></p>
+	</form>
+{% endblock %}
