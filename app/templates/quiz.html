@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz</title>
+    </head>
+    <body>
+        <h2>Quiz {% if number %} {{number}} {% endif %}</h2>
+        <div class="container">
+            {% if user %}
+                        <p>Hello <b>{{ user }}</b></p>
+            {% endif %}
+            <hr/>
+            {% for data in data %}
+                <h3>{{ data.question }}</h3>
+            {% if request.method == 'POST' and data.answer != request.form['answer'] %}
+                <span style="background-color: red">Jawaban yang benar adalah : {{ data.answer }}</span>
+            {% endif %}
+            {% endfor %}
+            <hr/>
+
+            {% for b in range(5) %}
+                <br>
+            {% endfor %}
+
+
+            <form method="post" action="/">
+                <div>
+                        <input type="range" name="answer" min="1" max="10000" value="50" onchange="rangePrimary.value=value">Jawaban Anda :
+                        <output id="rangePrimary">50</output>
+                        <input type="text" name="jawaban" value={% if data %} {{data.answer}} {% endif %}>
+                </div>
+                <div>
+                    <button type="submit">Periksa Hasil</button>
+                </div>
+            </form>
+            <a href=""><button type="submit" name="logout" value="logout">Keluar</button></a>
+        </div>
+    </body>
+</html>

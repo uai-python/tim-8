@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Isi data pribadi </title>
+	</head>
+	<body>
+		<table align="center" width="350" height="300">
+			<form method="POST">
+				<tr>
+					<td>Nama Lengkap</td> 
+					<td><input 
+					type='text' 
+					name='nama' 
+					required 
+					oninvalid="this.setCustomValidity('Nama Harus Diisi')" 
+					oninput="setCustomValidity('')"
+					placeholder="Nama"></td>
+				</tr>
+				<tr>
+					<td>Jenis Kelamin</td>
+					<td><select 
+							name='gender'
+							required 
+							oninvalid="this.setCustomValidity('Pilih jenis kelamin')" 
+							oninput="setCustomValidity('')">
+							<option value=''>Pilih</option>
+							<option value='L'>Pria</option>
+							<option value='P'>Wanita</option>
+						</select></td>
+				</tr>
+				<tr>
+					<td>Kota/Kabupaten</td>
+					<td>
+						<select name='kota'>
+						<option value=''>Pilih</option>
+						<option value='Jakarta Selatan'>Jakarta Selatan</option>
+						<option value='Jakarta Utara'>Jakarta Utara</option>
+						<option value='Jakarta Barat'>Jakarta Barat</option>
+						<option value='Jakarta Timur'>Jakarta Timur</option>
+						<option value='Jakarta Pusat'>Jakarta Pusat</option>
+						<option value='Kepulauan Seribu'>Kep.Seribu</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					 <td><button type="submit">Masuk</button></td>
+				</tr>
+			</form> 
+		</table>
+	</body>
+</html>
